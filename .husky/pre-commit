@@ -1,1 +1,8 @@
+#!/usr/bin/env sh
+
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+    . "$HOME/.nvm/nvm.sh"
+    nvm use --silent
+fi
+
 pnpm exec lint-staged
