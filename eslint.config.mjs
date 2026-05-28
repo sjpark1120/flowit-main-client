@@ -34,6 +34,12 @@ const eslintConfig = defineConfig([
         },
     },
     eslintPluginPrettierRecommended,
+    {
+        rules: {
+            // 포맷(import 순서 포함)은 Prettier CLI/확장으로만 검사
+            'prettier/prettier': 'off',
+        },
+    },
     globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
 ]);
 

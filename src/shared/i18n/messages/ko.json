@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "Login": "로그인",
+    "Sign up": "회원가입",
+    "Logo alt": "Flowit 로고",
+    "Welcome back": "다시 오신 것을 환영합니다",
+    "Welcome back description": "업무 관리를 다시 시작해보세요.",
+    "Email account": "이메일 계정",
+    "Password": "비밀번호",
+    "No account?": "계정이 없으신가요?"
+  },
+  "common": {
+    "Home": "홈"
+  }
+}
