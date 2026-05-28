@@ -2,7 +2,12 @@
   "auth": {
     "Login": "Login",
     "Sign up": "Sign up",
-    "Logo alt": "Logo alt"
+    "Logo alt": "Logo alt",
+    "Welcome back": "Welcome back",
+    "Welcome back description": "Welcome back description",
+    "Email account": "Email account",
+    "Password": "Password",
+    "No account?": "No account?"
   },
   "common": {
     "Home": "Home"
