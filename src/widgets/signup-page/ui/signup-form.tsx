@@ -36,7 +36,6 @@ export function SignupForm() {
     const { email, password, confirmPassword, name } = formState;
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.name, e.target.value);
         setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
