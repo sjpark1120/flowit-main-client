@@ -25,6 +25,7 @@ export async function apiRequest<TData>(path: string, options: RequestOptions = 
             ...rest,
             headers: {
                 'Content-Type': 'application/json',
+                Accept: 'application/json',
                 ...headers,
             },
             body: body === undefined ? undefined : JSON.stringify(body),
