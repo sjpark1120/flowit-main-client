@@ -1,6 +1,6 @@
 export type JoinUserRequest = {
     email: string;
-    passwordPlan: string;
+    passwordPlain: string;
     nickname: string;
 };
 

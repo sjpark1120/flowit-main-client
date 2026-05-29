@@ -17,7 +17,12 @@
     "emailFormatError": "올바른 이메일 주소를 입력해주세요",
     "passwordRequirements": "8자리 이상 24자리 미만의 영문+숫자 조합",
     "passwordMatchError": "비밀번호 일치",
-    "enterName": "이름을 입력해주세요"
+    "enterName": "이름을 입력해주세요",
+    "signupFailed": "회원가입에 실패했습니다",
+    "signingUp": "가입 중...",
+    "signupSuccessTitle": "회원가입 완료",
+    "signupSuccessDescription": "회원가입이 완료되었습니다. 로그인해 주세요.",
+    "goToLogin": "로그인하기"
   },
   "common": {
     "home": "홈"

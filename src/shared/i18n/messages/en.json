@@ -17,7 +17,12 @@
     "emailFormatError": "Please enter a valid email address",
     "passwordRequirements": "8 characters or more, less than 24 characters, combination of English and numbers",
     "passwordMatchError": "Passwords match",
-    "enterName": "Please enter your name"
+    "enterName": "Please enter your name",
+    "signupFailed": "Sign up failed",
+    "signingUp": "Signing up...",
+    "signupSuccessTitle": "Sign up complete",
+    "signupSuccessDescription": "Your account has been created. Please log in.",
+    "goToLogin": "Go to login"
   },
   "common": {
     "home": "Home"
