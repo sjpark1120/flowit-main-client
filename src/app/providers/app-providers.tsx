@@ -1,7 +1,7 @@
 'use client';
 
+import { AuthGuard } from './auth-guard';
 import { QueryProvider } from './query-provider';
-import { SessionInitializer } from './session-initializer';
 import { NextIntlClientProvider } from 'next-intl';
 
 import type { AbstractIntlMessages } from 'next-intl';
@@ -16,8 +16,7 @@ export function AppProviders({ children, messages, locale }: AppProvidersProps) 
     return (
         <QueryProvider>
             <NextIntlClientProvider messages={messages} locale={locale}>
-                <SessionInitializer />
-                {children}
+                <AuthGuard>{children}</AuthGuard>
             </NextIntlClientProvider>
         </QueryProvider>
     );

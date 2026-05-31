@@ -8,5 +8,6 @@ export function login(body: LoginRequest) {
     return apiRequest<LoginResponse>(LOGIN_PATH, {
         method: 'POST',
         body,
+        skipAuth: true,
     });
 }

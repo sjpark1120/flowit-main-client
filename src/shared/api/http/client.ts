@@ -1,22 +1,13 @@
 import { ApiError } from './api-error';
 import { isApiErrorResponse, isApiSuccessResponse } from './parse-api-error';
 
-import { getAccessToken } from '@shared/lib/auth';
+import { getAccessToken, refreshAccessTokenFromProvider } from '@shared/lib/auth';
 
 type RequestOptions = Omit<RequestInit, 'body'> & {
     body?: unknown;
     skipAuth?: boolean;
+    isRetry?: boolean;
 };
-
-function getApiBaseUrl() {
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-    if (!baseUrl) {
-        throw new Error('NEXT_PUBLIC_API_BASE_URL is not defined');
-    }
-
-    return baseUrl.replace(/\/$/, '');
-}
 
 function buildAuthHeaders(skipAuth?: boolean): Record<string, string> {
     if (skipAuth) {
@@ -34,13 +25,13 @@ function buildAuthHeaders(skipAuth?: boolean): Record<string, string> {
     };
 }
 
-export async function apiRequest<TData>(path: string, options: RequestOptions = {}): Promise<TData> {
+async function executeRequest<TData>(path: string, options: RequestOptions): Promise<TData> {
     const { body, headers, skipAuth, ...rest } = options;
 
     let response: Response;
 
     try {
-        response = await fetch(`${getApiBaseUrl()}${path}`, {
+        response = await fetch(path, {
             ...rest,
             credentials: 'include',
             headers: {
@@ -70,4 +61,30 @@ export async function apiRequest<TData>(path: string, options: RequestOptions = 
     }
 
     return responseBody.data;
+}
+
+export async function apiRequest<TData>(path: string, options: RequestOptions = {}): Promise<TData> {
+    const { isRetry, skipAuth, ...requestOptions } = options;
+
+    try {
+        return await executeRequest<TData>(path, { ...requestOptions, skipAuth, isRetry });
+    } catch (error) {
+        const shouldRefresh = error instanceof ApiError && error.status === 401 && !skipAuth && !isRetry;
+
+        if (!shouldRefresh) {
+            throw error;
+        }
+
+        const accessToken = await refreshAccessTokenFromProvider();
+
+        if (!accessToken) {
+            throw error;
+        }
+
+        return apiRequest<TData>(path, {
+            ...requestOptions,
+            skipAuth,
+            isRetry: true,
+        });
+    }
 }

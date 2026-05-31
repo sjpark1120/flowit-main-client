@@ -1,4 +1,12 @@
-export { getAccessToken, setAccessTokenProvider } from './auth';
+export {
+    AUTH_PUBLIC_PATHS,
+    getAccessToken,
+    getLocaleFromPathname,
+    getPathnameWithoutLocale,
+    isAuthPublicPath,
+    REFRESH_TOKEN_COOKIE_NAME,
+    setAccessTokenProvider,
+} from './auth';
 export { cn } from './clsx/cn';
 export {
     isPasswordConfirmed,
