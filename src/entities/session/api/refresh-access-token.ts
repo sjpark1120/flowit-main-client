@@ -3,7 +3,6 @@
 import { apiRequest } from '@shared/api/http';
 
 import { saveAccessToken } from '../lib/save-auth-tokens';
-import { useAuthStore } from '../model/use-auth-store';
 
 import type { AuthTokens } from '../model/auth.types';
 
@@ -19,7 +18,6 @@ export async function refreshAccessToken() {
         saveAccessToken({ accessToken: data.accessToken });
         return data.accessToken;
     } catch {
-        useAuthStore.getState().clearAuth();
         return null;
     }
 }

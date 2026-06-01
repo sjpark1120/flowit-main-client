@@ -8,5 +8,6 @@ export function joinUser(body: JoinUserRequest) {
     return apiRequest<JoinUserData>(JOIN_USER_PATH, {
         method: 'POST',
         body,
+        skipAuth: true,
     });
 }

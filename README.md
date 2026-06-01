@@ -7,7 +7,7 @@
   - [x] TypeScript / ESLint / Prettier 설정
   - [x] 폴더 구조 설계
   - [x] 공통 컴포넌트 구조 설계
-  - [ ] 상태 관리(Zustand 등) 세팅
+  - [x] 상태 관리(Zustand 등) 세팅
   - [x] API 클라이언트(Axios/Fetch Wrapper) 구성
   - [x] i18n(다국어) 설정 (선택)
 
@@ -16,7 +16,7 @@
 ## Phase 2: 로그인 / 회원가입
 
 - [x] 로그인 UI 구현
-- [ ] 로그인 API 연동
+- [x] 로그인 API 연동
   - root로 진입시 (Auth) login 으로 이동
   - Access Token -> Zustand 저장 (LocalStorage 저장 X -> persist 미사용)
   - Refresh Token -> 쿠키
@@ -25,7 +25,7 @@
 
 - [x] 회원가입 UI 구현
 - [x] 회원가입 API 연동
-- [ ] 로그인 함수 단위테스트 추가
+- [x] 로그인 함수 단위테스트 추가
 
 ---
 
