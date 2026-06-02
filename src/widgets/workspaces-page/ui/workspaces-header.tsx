@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { WorkspacesHeaderProfileButton } from './workspaces-header-profile-button';
 import { Bell } from 'lucide-react';
 import FlowitLogo from 'public/images/flowit-logo.png';
 
@@ -18,16 +19,7 @@ export function WorkspacesHeader() {
                     className="p-2 text-slate-500 hover:text-slate-700"
                 />
                 <div className="my-2 self-stretch border-l border-slate-200" />
-                <Button
-                    rounded="full"
-                    size="sm"
-                    variant="light-blue"
-                    className="aspect-square size-9 shrink-0 p-0 text-sm leading-none"
-                    aria-label="프로필"
-                    shadow={false}
-                >
-                    홍
-                </Button>
+                <WorkspacesHeaderProfileButton />
             </div>
         </header>
     );
