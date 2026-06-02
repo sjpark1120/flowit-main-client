@@ -1,6 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
 
 import { setAccessTokenProvider } from '@shared/lib/auth';
 
@@ -11,11 +12,16 @@ type AuthState = {
     clearAuth: () => void;
 };
 
-export const useAuthStore = create<AuthState>(set => ({
-    accessToken: null,
-    setAccessToken: accessToken => set({ accessToken }),
-    setAuth: ({ accessToken }) => set({ accessToken }),
-    clearAuth: () => set({ accessToken: null }),
-}));
+export const useAuthStore = create<AuthState>()(
+    devtools(
+        set => ({
+            accessToken: null,
+            setAccessToken: accessToken => set({ accessToken }, false, 'auth/setAccessToken'),
+            setAuth: ({ accessToken }) => set({ accessToken }, false, 'auth/setAuth'),
+            clearAuth: () => set({ accessToken: null }, false, 'auth/clearAuth'),
+        }),
+        { name: 'auth-store' },
+    ),
+);
 
 setAccessTokenProvider(() => useAuthStore.getState().accessToken);
