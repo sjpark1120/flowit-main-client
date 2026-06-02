@@ -6,8 +6,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Plus } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-import { meUserQueryKeys } from '@entities/user';
-import { createWorkspace } from '@entities/workspace';
+import { createWorkspace, meWorkspacesQueryKeys } from '@entities/workspace';
 
 import { Button, LabeledInput, LabeledTextarea, Modal } from '@shared/ui';
 import { isValidWorkspaceName, MAX_DEFAULT_LENGTH, MAX_TEXT_AREA_LENGTH } from '@shared/lib';
@@ -36,7 +35,7 @@ export function WorkspaceCreate() {
         mutationKey: ['workspace', 'create'],
         mutationFn: createWorkspace,
         onSuccess: async () => {
-            await queryClient.invalidateQueries({ queryKey: meUserQueryKeys.all });
+            await queryClient.invalidateQueries({ queryKey: meWorkspacesQueryKeys.all });
             handleCloseCreateWorkspaceModal();
         },
     });
