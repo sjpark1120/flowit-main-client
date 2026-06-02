@@ -1,6 +1,6 @@
 import { apiRequest } from '@shared/api/http';
 
-import type { JoinUserData, JoinUserRequest } from '../model/join-user.types';
+import type { JoinUserData, JoinUserRequest } from '@entities/user/model/join-user.types';
 
 const JOIN_USER_PATH = '/v1/public/users/join';
 
