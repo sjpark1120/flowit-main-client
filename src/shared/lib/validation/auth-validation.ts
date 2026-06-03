@@ -1,6 +1,7 @@
 const PASSWORD_MIN_LENGTH = 8;
 export const PASSWORD_MAX_LENGTH = 24;
 export const MAX_DEFAULT_LENGTH = 64;
+export const MAX_TEXT_AREA_LENGTH = 255;
 
 const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
 

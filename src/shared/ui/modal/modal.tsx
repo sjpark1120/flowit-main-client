@@ -13,11 +13,12 @@ type ModalProps = {
     title: string;
     description?: string;
     children?: ReactNode;
+    footer?: ReactNode;
     className?: string;
     onClose?: () => void;
 };
 
-export function Modal({ open, title, description, children, className, onClose }: ModalProps) {
+export function Modal({ open, title, description, children, footer, className, onClose }: ModalProps) {
     const titleId = useId();
     const descriptionId = useId();
 
@@ -64,15 +65,20 @@ export function Modal({ open, title, description, children, className, onClose }
                 aria-describedby={description ? descriptionId : undefined}
                 className={cn('relative z-10 w-full max-w-sm rounded-xl bg-white p-6 shadow-xl', className)}
             >
-                <h2 id={titleId} className="text-center text-lg font-bold text-slate-900">
-                    {title}
-                </h2>
+                {title ? (
+                    <div className="flex shrink-0 items-center justify-between border-b border-slate-100 px-2 pb-4">
+                        <h2 id={titleId} className="text-center text-lg font-bold text-slate-900">
+                            {title}
+                        </h2>
+                    </div>
+                ) : null}
                 {description ? (
                     <p id={descriptionId} className="mt-2 text-center text-sm text-slate-600">
                         {description}
                     </p>
                 ) : null}
-                {children}
+                <div className="py-3">{children}</div>
+                {footer ? <div className="flex shrink-0 items-center justify-end pt-4">{footer}</div> : null}
             </div>
         </div>,
         document.body,

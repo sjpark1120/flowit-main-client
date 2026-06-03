@@ -1,6 +1,7 @@
 {
   "auth": {
     "login": "로그인",
+    "logout": "로그아웃",
     "signUp": "회원가입",
     "logoAlt": "Flowit 로고",
     "welcomeBack": "다시 오신 것을 환영합니다",
@@ -26,6 +27,20 @@
     "loginFailed": "로그인에 실패했습니다"
   },
   "common": {
-    "home": "홈"
+    "home": "홈",
+    "cancel": "취소"
+  },
+  "workspaces": {
+    "myWorkspaces": "나의 워크스페이스",
+    "createWorkspace": "새 워크스페이스 생성",
+    "enter": "입장하기",
+    "activeUsers": "{count}명 참여 중",
+    "workspaceName": "워크스페이스 이름",
+    "descriptionOptional": "설명 (선택)",
+    "createWorkspaceButton": "생성하기",
+    "creatingWorkspace": "생성 중...",
+    "workspaceNameRequired": "워크스페이스 이름을 입력해주세요",
+    "workspaceNamePlaceholder": "예: App 개발팀",
+    "descriptionPlaceholder": "어떤 프로젝트를 위한 공간인가요?"
   }
 }

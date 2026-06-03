@@ -7,7 +7,7 @@ import { LOGIN_FORM_FIELDS, useLoginForm, useLoginMutation } from '@features/log
 import { useRouter } from '@shared/i18n';
 import { Button, LabeledInput } from '@shared/ui';
 import { getApiErrorMessage } from '@shared/api';
-import { MAX_DEFAULT_LENGTH, PASSWORD_MAX_LENGTH } from '@shared/lib';
+import { AUTH_ROUTES, MAX_DEFAULT_LENGTH, PASSWORD_MAX_LENGTH } from '@shared/lib';
 
 import type { FormEvent } from 'react';
 
@@ -25,7 +25,7 @@ export function LoginForm() {
             { email, password },
             {
                 onSuccess: () => {
-                    router.push('/');
+                    router.replace(AUTH_ROUTES.WORKSPACES);
                 },
             },
         );
@@ -54,7 +54,7 @@ export function LoginForm() {
                 />
             </div>
             {submitErrorMessage && <p className="text-sm text-red-600">{submitErrorMessage}</p>}
-            <Button fullWidth type="submit" disabled={isPending}>
+            <Button fullWidth className="mt-4" type="submit" disabled={isPending}>
                 <span className="font-extrabold">{t('login')}</span>
             </Button>
         </form>

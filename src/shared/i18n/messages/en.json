@@ -1,6 +1,7 @@
 {
   "auth": {
     "login": "Login",
+    "logout": "Logout",
     "signUp": "Sign up",
     "logoAlt": "Logo alt",
     "welcomeBack": "Welcome back",
@@ -26,6 +27,20 @@
     "loginFailed": "Login failed"
   },
   "common": {
-    "home": "Home"
+    "home": "Home",
+    "cancel": "Cancel"
+  },
+  "workspaces": {
+    "myWorkspaces": "My workspaces",
+    "createWorkspace": "Create new workspace",
+    "enter": "Enter",
+    "activeUsers": "{count} active users",
+    "workspaceName": "Workspace name",
+    "descriptionOptional": "Description (optional)",
+    "createWorkspaceButton": "Create workspace",
+    "creatingWorkspace": "Creating...",
+    "workspaceNameRequired": "Please enter a workspace name",
+    "workspaceNamePlaceholder": "Example: App development team",
+    "descriptionPlaceholder": "What is the space for?"
   }
 }

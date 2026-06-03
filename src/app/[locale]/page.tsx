@@ -1,3 +1,5 @@
+import { AuthGate } from '@features/auth';
+
 export default function HomePage() {
-    return <div></div>;
+    return <AuthGate mode="redirect" />;
 }

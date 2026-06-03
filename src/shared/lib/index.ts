@@ -1,5 +1,6 @@
 export {
     AUTH_PUBLIC_PATHS,
+    AUTH_ROUTES,
     getAccessToken,
     getLocaleFromPathname,
     getPathnameWithoutLocale,
@@ -7,12 +8,14 @@ export {
     REFRESH_TOKEN_COOKIE_NAME,
     setAccessTokenProvider,
 } from './auth';
-export { cn } from './clsx/cn';
+export { cn } from './clsx';
 export {
     isPasswordConfirmed,
     isValidEmail,
     isValidName,
     isValidPassword,
+    isValidWorkspaceName,
     MAX_DEFAULT_LENGTH,
+    MAX_TEXT_AREA_LENGTH,
     PASSWORD_MAX_LENGTH,
-} from './validation/auth-validation';
+} from './validation';
