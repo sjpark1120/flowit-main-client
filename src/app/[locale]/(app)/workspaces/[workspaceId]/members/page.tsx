@@ -1,12 +1,10 @@
+import { WorkspaceMembersPage } from '@widgets/workspace-members-page';
+
 type PageProps = {
     params: Promise<{ workspaceId: string; locale: string }>;
 };
 
-export default async function MembersPage({ params }: PageProps) {
+export default async function Members({ params }: PageProps) {
     const { workspaceId } = await params;
-    return (
-        <div className="p-8">
-            <h1 className="text-xl font-bold">Members — workspace {workspaceId}</h1>
-        </div>
-    );
+    return <WorkspaceMembersPage workspaceId={workspaceId} />;
 }
