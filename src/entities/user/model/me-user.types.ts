@@ -1,4 +1,11 @@
-import type { Workspace } from '@entities/workspace';
+type MeUserWorkspace = {
+    id: number;
+    name: string;
+    description: string | null;
+    memberCount: number;
+    role: string;
+    joinedAt: number;
+};
 
 export type MeUserResponse = {
     id: number; // 사용자 식별자
@@ -7,6 +14,6 @@ export type MeUserResponse = {
     status: string;
     profileImageFileId: number | null;
     profileImageUrl: string | null;
-    workspaces: Workspace[];
+    workspaces: MeUserWorkspace[];
     extensions: Record<string, unknown>;
 };

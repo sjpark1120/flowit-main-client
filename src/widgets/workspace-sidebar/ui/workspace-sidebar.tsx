@@ -3,12 +3,12 @@
 import { ChevronRight, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-import { Link, usePathname } from '@shared/i18n';
-import { cn } from '@shared/lib/clsx/cn';
-import { WORKSPACE_ROUTES } from '@shared/lib/routes/workspace-routes';
+import { useWorkspaceById } from '@entities/workspace';
 
-import { useWorkspaceById } from '../model/use-workspace-by-id';
-import { WORKSPACE_NAV_ITEMS } from '../model/workspace-nav-items';
+import { Link, usePathname } from '@shared/i18n';
+import { cn, WORKSPACE_ROUTES } from '@shared/lib';
+
+import { WORKSPACE_NAV_ITEMS } from '../model';
 
 import type { LucideIcon } from 'lucide-react';
 

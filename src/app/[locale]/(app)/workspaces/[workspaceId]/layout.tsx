@@ -1,4 +1,4 @@
-import { WorkspaceSidebar } from '@entities/workspace';
+import { WorkspaceSidebar } from '@widgets/workspace-sidebar';
 
 type Props = {
     params: Promise<{ workspaceId: string }>;

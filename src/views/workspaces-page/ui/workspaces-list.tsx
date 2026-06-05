@@ -1,8 +1,8 @@
 'use client';
 
 import { WorkspacesCard } from './workspaces-card';
-import { WorkspaceCreate } from './workspaces-create';
 
+import { CreateWorkspace } from '@features/create-workspace';
 import { useMeWorkspacesQuery } from '@entities/workspace';
 
 export function WorkspacesList() {
@@ -14,7 +14,7 @@ export function WorkspacesList() {
                 {meWorkspaces?.items.map(workspace => (
                     <WorkspacesCard key={workspace.id} workspace={workspace} />
                 ))}
-                <WorkspaceCreate />
+                <CreateWorkspace />
             </div>
         </div>
     );
