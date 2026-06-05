@@ -14,34 +14,6 @@ import type { LucideIcon } from 'lucide-react';
 
 type Props = { workspaceId: string };
 
-type SidebarNavLinkProps = {
-    href: string;
-    icon: LucideIcon;
-    label: string;
-    pathname: string;
-};
-
-function isSidebarNavActive(pathname: string, href: string) {
-    return pathname === href || pathname.startsWith(`${href}/`);
-}
-
-function SidebarNavLink({ href, icon: Icon, label, pathname }: SidebarNavLinkProps) {
-    const isActive = isSidebarNavActive(pathname, href);
-
-    return (
-        <Link
-            href={href}
-            className={cn(
-                'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium',
-                isActive ? 'bg-blue-50 text-blue-700' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800',
-            )}
-        >
-            <Icon className="size-4" />
-            {label}
-        </Link>
-    );
-}
-
 export function WorkspaceSidebar({ workspaceId }: Props) {
     const pathname = usePathname();
     const t = useTranslations('sidebar');
@@ -83,5 +55,33 @@ export function WorkspaceSidebar({ workspaceId }: Props) {
                 />
             </div>
         </aside>
+    );
+}
+
+function isSidebarNavActive(pathname: string, href: string) {
+    return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+type SidebarNavLinkProps = {
+    href: string;
+    icon: LucideIcon;
+    label: string;
+    pathname: string;
+};
+
+function SidebarNavLink({ href, icon: Icon, label, pathname }: SidebarNavLinkProps) {
+    const isActive = isSidebarNavActive(pathname, href);
+
+    return (
+        <Link
+            href={href}
+            className={cn(
+                'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium',
+                isActive ? 'bg-blue-50 text-blue-700' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800',
+            )}
+        >
+            <Icon className="size-4" />
+            {label}
+        </Link>
     );
 }
