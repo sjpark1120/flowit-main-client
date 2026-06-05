@@ -1,7 +1,6 @@
-import { MeUserPrefetch } from './me-user-prefetch';
-
-import { WorkspacesHeader } from '@widgets/workspaces-page';
+import { WorkspacesHeader } from '@views/workspaces-page';
 import { AuthGate } from '@features/auth';
+import { MeUserPrefetch } from '@features/me-user-prefetch';
 
 type AppLayoutProps = {
     children: React.ReactNode;

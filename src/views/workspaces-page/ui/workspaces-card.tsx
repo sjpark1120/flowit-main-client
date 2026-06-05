@@ -2,7 +2,7 @@ import { ChevronRight, Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Link } from '@shared/i18n';
-import { WORKSPACE_ROUTES } from '@shared/lib/routes/workspace-routes';
+import { WORKSPACE_ROUTES } from '@shared/lib';
 
 import type { Workspace } from '@entities/workspace';
 

@@ -16,11 +16,11 @@ import {
     CREATE_WORKSPACE_FORM_ID,
     INITIAL_CREATE_WORKSPACE_FORM_VALUES,
     isCreateWorkspaceFormField,
-} from '../model/constants';
+} from '../model';
 
 import type { ChangeEvent, FormEvent } from 'react';
 
-export function WorkspaceCreate() {
+export function CreateWorkspace() {
     const t = useTranslations('workspaces');
     const commonT = useTranslations('common');
     const queryClient = useQueryClient();

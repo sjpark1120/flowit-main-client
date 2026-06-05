@@ -9,6 +9,7 @@ export {
     setAccessTokenProvider,
 } from './auth';
 export { cn } from './clsx';
+export { WORKSPACE_ROUTES } from './routes/workspace-routes';
 export {
     isPasswordConfirmed,
     isValidEmail,

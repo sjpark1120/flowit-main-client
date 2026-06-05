@@ -3,44 +3,16 @@
 import { ChevronRight, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-import { Link, usePathname } from '@shared/i18n';
-import { cn } from '@shared/lib/clsx/cn';
-import { WORKSPACE_ROUTES } from '@shared/lib/routes/workspace-routes';
+import { useWorkspaceById } from '@entities/workspace';
 
-import { useWorkspaceById } from '../model/use-workspace-by-id';
-import { WORKSPACE_NAV_ITEMS } from '../model/workspace-nav-items';
+import { Link, usePathname } from '@shared/i18n';
+import { cn, WORKSPACE_ROUTES } from '@shared/lib';
+
+import { WORKSPACE_NAV_ITEMS } from '../model';
 
 import type { LucideIcon } from 'lucide-react';
 
 type Props = { workspaceId: string };
-
-type SidebarNavLinkProps = {
-    href: string;
-    icon: LucideIcon;
-    label: string;
-    pathname: string;
-};
-
-function isSidebarNavActive(pathname: string, href: string) {
-    return pathname === href || pathname.startsWith(`${href}/`);
-}
-
-function SidebarNavLink({ href, icon: Icon, label, pathname }: SidebarNavLinkProps) {
-    const isActive = isSidebarNavActive(pathname, href);
-
-    return (
-        <Link
-            href={href}
-            className={cn(
-                'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium',
-                isActive ? 'bg-blue-50 text-blue-700' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800',
-            )}
-        >
-            <Icon className="size-4" />
-            {label}
-        </Link>
-    );
-}
 
 export function WorkspaceSidebar({ workspaceId }: Props) {
     const pathname = usePathname();
@@ -83,5 +55,33 @@ export function WorkspaceSidebar({ workspaceId }: Props) {
                 />
             </div>
         </aside>
+    );
+}
+
+function isSidebarNavActive(pathname: string, href: string) {
+    return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+type SidebarNavLinkProps = {
+    href: string;
+    icon: LucideIcon;
+    label: string;
+    pathname: string;
+};
+
+function SidebarNavLink({ href, icon: Icon, label, pathname }: SidebarNavLinkProps) {
+    const isActive = isSidebarNavActive(pathname, href);
+
+    return (
+        <Link
+            href={href}
+            className={cn(
+                'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium',
+                isActive ? 'bg-blue-50 text-blue-700' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800',
+            )}
+        >
+            <Icon className="size-4" />
+            {label}
+        </Link>
     );
 }

@@ -1,6 +1,6 @@
 import { Kanban, LayoutDashboard, Settings, Users } from 'lucide-react';
 
-import { WORKSPACE_ROUTES } from '@shared/lib/routes/workspace-routes';
+import { WORKSPACE_ROUTES } from '@shared/lib';
 
 type WorkspaceNavItemKey = 'dashboard' | 'board' | 'members' | 'settings';
 
