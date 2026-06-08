@@ -29,7 +29,7 @@ type PasswordEditModalProps = {
 export function PasswordEditModal({ open, onClose }: PasswordEditModalProps) {
     const t = useTranslations('myPage');
     const tAuth = useTranslations('auth');
-    const commonT = useTranslations('common');
+    const tCommon = useTranslations('common');
 
     const { mutate: updateMePasswordMutate, isPending: isUpdatingPassword, error } = useUpdateMePasswordMutation();
     const [formValues, setFormValues] = useState(INITIAL_FORM_VALUES);
@@ -86,7 +86,7 @@ export function PasswordEditModal({ open, onClose }: PasswordEditModalProps) {
             footer={
                 <div className="flex w-full gap-3">
                     <Button variant="neutral" size="sm" fullWidth className="font-bold" onClick={handleClose}>
-                        {commonT('cancel')}
+                        {tCommon('cancel')}
                     </Button>
                     <Button
                         variant="primary"
@@ -97,7 +97,7 @@ export function PasswordEditModal({ open, onClose }: PasswordEditModalProps) {
                         type="submit"
                         form={PASSWORD_EDIT_FORM_ID}
                     >
-                        {isUpdatingPassword ? t('passwordUpdating') : commonT('save')}
+                        {isUpdatingPassword ? t('passwordUpdating') : tCommon('save')}
                     </Button>
                 </div>
             }

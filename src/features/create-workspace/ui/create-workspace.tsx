@@ -22,7 +22,7 @@ import type { ChangeEvent, FormEvent } from 'react';
 
 export function CreateWorkspace() {
     const t = useTranslations('workspaces');
-    const commonT = useTranslations('common');
+    const tCommon = useTranslations('common');
     const queryClient = useQueryClient();
 
     const [createWorkspaceModalOpen, setCreateWorkspaceModalOpen] = useState(false);
@@ -98,7 +98,7 @@ export function CreateWorkspace() {
                             onClick={handleCloseCreateWorkspaceModal}
                             fullWidth
                         >
-                            {commonT('cancel')}
+                            {tCommon('cancel')}
                         </Button>
                         <Button
                             type="submit"

@@ -23,7 +23,7 @@ type ProfileEditModalProps = {
 export function ProfileEditModal({ open, initialNickname, onClose }: ProfileEditModalProps) {
     const t = useTranslations('myPage');
     const tAuth = useTranslations('auth');
-    const commonT = useTranslations('common');
+    const tCommon = useTranslations('common');
 
     const { mutate: updateMeUserMutate, isPending: isUpdatingMeUser, error } = useUpdateMeUserMutation();
     const [draftNickname, setDraftNickname] = useState<string | null>(null);
@@ -64,7 +64,7 @@ export function ProfileEditModal({ open, initialNickname, onClose }: ProfileEdit
             footer={
                 <div className="flex w-full gap-3">
                     <Button variant="neutral" size="sm" fullWidth className="font-bold" onClick={handleClose}>
-                        {commonT('cancel')}
+                        {tCommon('cancel')}
                     </Button>
                     <Button
                         variant="primary"
@@ -75,7 +75,7 @@ export function ProfileEditModal({ open, initialNickname, onClose }: ProfileEdit
                         type="submit"
                         form={PROFILE_EDIT_FORM_ID}
                     >
-                        {isUpdatingMeUser ? t('profileUpdating') : commonT('save')}
+                        {isUpdatingMeUser ? t('profileUpdating') : tCommon('save')}
                     </Button>
                 </div>
             }
