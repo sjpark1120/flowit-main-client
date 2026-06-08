@@ -11,7 +11,7 @@ type UseMeProfileImageQueryProps = {
 };
 
 export function useMeProfileImageQuery({ profileImageFileId, enabled = true }: UseMeProfileImageQueryProps) {
-    const hasProfileImage = profileImageFileId != null;
+    const hasProfileImage = profileImageFileId !== null;
 
     return useQuery({
         queryKey: meProfileImageQueryKeys.detail(profileImageFileId ?? 'none'),
