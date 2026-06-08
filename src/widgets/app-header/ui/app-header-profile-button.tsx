@@ -7,7 +7,7 @@ import { useMeProfileImageQuery, useMeUserQuery, useProfileImageObjectUrl } from
 
 import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@shared/ui';
 
-export function WorkspacesHeaderProfileButton() {
+export function AppHeaderProfileButton() {
     const t = useTranslations('auth');
     const { data: meUser } = useMeUserQuery({ enabled: true });
     const { data: profileImageBlob } = useMeProfileImageQuery({

@@ -1,4 +1,4 @@
-import { WorkspacesHeader } from '@views/workspaces-page';
+import { AppHeader } from '@widgets/app-header';
 import { AuthGate } from '@features/auth';
 import { MeUserPrefetch } from '@features/me-user-prefetch';
 
@@ -11,7 +11,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
         <AuthGate mode="protected">
             <MeUserPrefetch />
             <div className="flex h-dvh flex-col overflow-hidden">
-                <WorkspacesHeader />
+                <AppHeader />
                 <div className="flex min-h-0 flex-1 flex-col">{children}</div>
             </div>
         </AuthGate>
