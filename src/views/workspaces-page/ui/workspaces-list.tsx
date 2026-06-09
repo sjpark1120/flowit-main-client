@@ -15,8 +15,8 @@ export function WorkspacesList() {
                 {meWorkspaces?.items.map(workspace => (
                     <WorkspacesCard key={workspace.id} workspace={workspace} />
                 ))}
-                <CreateWorkspace />
                 <SignUpWithInvitationCode />
+                <CreateWorkspace />
             </div>
         </div>
     );
