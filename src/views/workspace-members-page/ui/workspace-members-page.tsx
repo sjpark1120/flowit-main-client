@@ -1,11 +1,13 @@
-type Props = {
-    workspaceId: string;
-};
+import { useTranslations } from 'next-intl';
 
-export function WorkspaceMembersPage({ workspaceId }: Props) {
+import { PageTitle } from '@shared/ui';
+
+export function WorkspaceMembersPage() {
+    const t = useTranslations('members');
+
     return (
-        <div className="p-8">
-            <h1 className="text-xl font-bold">Members — workspace {workspaceId}</h1>
-        </div>
+        <main className="p-8">
+            <PageTitle title={t('title')} subtitle={t('description')} />
+        </main>
     );
 }

@@ -3,12 +3,10 @@
 import { ChevronRight, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-import { useWorkspaceById } from '@entities/workspace';
-
 import { Link, usePathname } from '@shared/i18n';
 import { cn, WORKSPACE_ROUTES } from '@shared/lib';
 
-import { WORKSPACE_NAV_ITEMS } from '../model';
+import { useWorkspaceById, WORKSPACE_NAV_ITEMS } from '../model';
 
 import type { LucideIcon } from 'lucide-react';
 

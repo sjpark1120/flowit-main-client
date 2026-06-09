@@ -78,5 +78,9 @@
     "profileImageUploadFailed": "프로필 이미지 업로드에 실패했습니다",
     "accountInfo": "계정 정보",
     "joinedWorkspaces": "참여 중인 워크스페이스"
+  },
+  "members": {
+    "title": "멤버 관리",
+    "description": "워크스페이스 멤버와 권한을 관리하세요."
   }
 }

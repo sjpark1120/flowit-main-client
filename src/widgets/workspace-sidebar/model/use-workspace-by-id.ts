@@ -1,8 +1,7 @@
 'use client';
 
-import { useMeWorkspacesQuery } from './use-me-workspaces-query';
-
-import { findWorkspaceById, getWorkspaceDisplayName } from '../lib';
+import { useMeWorkspacesQuery } from '@entities/user';
+import { findWorkspaceById, getWorkspaceDisplayName } from '@entities/workspace';
 
 type UseWorkspaceByIdProps = {
     workspaceId: string | number;

@@ -78,5 +78,9 @@
     "profileImageUploadFailed": "Failed to upload profile image",
     "accountInfo": "Account info",
     "joinedWorkspaces": "Joined workspaces"
+  },
+  "members": {
+    "title": "Members",
+    "description": "Manage the members and roles of your workspace."
   }
 }
