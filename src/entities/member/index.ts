@@ -1,5 +1,7 @@
-export { joinWorkspaceByInviteCode } from './api/join-workspace-by-invite-code';
+export { joinWorkspaceByInviteCode, withdrawMember } from './api';
+export { memberMutationKeys, useWithdrawMemberMutation } from './model';
 export type {
     JoinWorkspaceByInviteCodeRequest,
     JoinWorkspaceByInviteCodeResponse,
-} from './model/join-workspace-by-invite-code.types';
+    WithdrawMemberResponse,
+} from './model';
