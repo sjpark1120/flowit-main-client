@@ -3,7 +3,7 @@ import { apiRequest } from '@shared/api/http';
 import type {
     JoinWorkspaceByInviteCodeRequest,
     JoinWorkspaceByInviteCodeResponse,
-} from '../model/join-workspace-by-invite-code.types';
+} from './model/join-workspace-by-invite-code.types';
 
 const JOIN_WORKSPACE_BY_INVITE_CODE_PATH = '/v1/workspaces/join-requests/invite-code';
 

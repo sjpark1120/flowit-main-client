@@ -1,4 +1,4 @@
-export { createWorkspace, getWorkspace, joinWorkspaceByInviteCode, updateWorkspace } from './api';
+export { createWorkspace, getWorkspace, updateWorkspace } from './api';
 export { buildUpdateWorkspaceRequest, findWorkspaceById, isWorkspaceManager, isWorkspaceOwner } from './lib';
 export {
     useDeleteWorkspaceMutation,
@@ -10,8 +10,6 @@ export {
 export type {
     CreateWorkspaceRequest,
     CreateWorkspaceResponse,
-    JoinWorkspaceByInviteCodeRequest,
-    JoinWorkspaceByInviteCodeResponse,
     UpdateWorkspaceRequest,
     UpdateWorkspaceResponse,
     WorkspaceDetail,
