@@ -110,10 +110,27 @@
     "changeRoleDescription": "{name}님의 워크스페이스 권한을 변경합니다.",
     "changingRole": "변경 중...",
     "changeRoleFailed": "권한 변경에 실패했습니다",
+    "changeRoleUnknownError": "알 수 없는 오류가 발생했습니다. 잠시 후 다시 시도해주세요",
+    "changeRoleErrors": {
+      "VALIDATION_400_001": "요청 값이 유효하지 않습니다",
+      "AUTH_401_001": "로그인이 필요하거나 인증이 만료되었습니다",
+      "AUTH_403_001": "권한이 없거나 마지막 소유자를 변경할 수 없습니다",
+      "WORKSPACE_404_001": "워크스페이스가 존재하지 않습니다",
+      "WORKSPACE_MEMBER_404_001": "대상 멤버가 존재하지 않습니다",
+      "INTERNAL_500_001": "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요"
+    },
     "removeMemberTitle": "멤버를 강퇴할까요?",
     "removeMemberDescription": "{name}({email})님을 워크스페이스에서 강퇴합니다. 이 작업은 되돌릴 수 없습니다.",
     "removingMember": "강퇴 중...",
     "removeMemberFailed": "멤버 강퇴에 실패했습니다",
+    "removeMemberUnknownError": "알 수 없는 오류가 발생했습니다. 잠시 후 다시 시도해주세요",
+    "removeMemberErrors": {
+      "AUTH_401_001": "로그인이 필요하거나 인증이 만료되었습니다",
+      "AUTH_403_001": "권한이 없거나 본인 또는 소유자는 강퇴할 수 없습니다",
+      "WORKSPACE_404_001": "워크스페이스가 존재하지 않습니다",
+      "WORKSPACE_MEMBER_404_001": "대상 멤버가 존재하지 않습니다",
+      "INTERNAL_500_001": "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요"
+    },
     "confirmRemove": "강퇴하기",
     "roles": {
       "OWNER": "소유자",

@@ -7,8 +7,9 @@ import { useTranslations } from 'next-intl';
 import { useUpdateWorkspaceMemberRoleMutation } from '@entities/member';
 
 import { Button, Modal } from '@shared/ui';
-import { getApiErrorMessage } from '@shared/api';
 import { cn } from '@shared/lib';
+
+import { getMemberRoleChangeErrorMessage } from '../lib';
 
 import type { WorkspaceMember, WorkspaceMemberRole } from '@entities/member';
 
@@ -68,7 +69,14 @@ export function MemberRoleChangeModal({
         );
     };
 
-    const submitErrorMessage = error ? getApiErrorMessage(error, t('changeRoleFailed')) : null;
+    const submitErrorMessage = error
+        ? getMemberRoleChangeErrorMessage({
+              error,
+              fallback: t('changeRoleFailed'),
+              unknownError: t('changeRoleUnknownError'),
+              getKnownErrorMessage: errorCode => t(`changeRoleErrors.${errorCode}`),
+          })
+        : null;
 
     return (
         <Modal

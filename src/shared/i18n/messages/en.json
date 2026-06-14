@@ -110,10 +110,27 @@
     "changeRoleDescription": "Change the workspace role for {name}.",
     "changingRole": "Updating...",
     "changeRoleFailed": "Failed to change role",
+    "changeRoleUnknownError": "An unknown error occurred. Please try again later",
+    "changeRoleErrors": {
+      "VALIDATION_400_001": "The request value is invalid",
+      "AUTH_401_001": "You need to sign in or your session has expired",
+      "AUTH_403_001": "You do not have permission or cannot change the last owner",
+      "WORKSPACE_404_001": "This workspace does not exist",
+      "WORKSPACE_MEMBER_404_001": "The target member does not exist",
+      "INTERNAL_500_001": "A server error occurred. Please try again later"
+    },
     "removeMemberTitle": "Remove this member?",
     "removeMemberDescription": "Remove {name} ({email}) from this workspace. This action cannot be undone.",
     "removingMember": "Removing...",
     "removeMemberFailed": "Failed to remove member",
+    "removeMemberUnknownError": "An unknown error occurred. Please try again later",
+    "removeMemberErrors": {
+      "AUTH_401_001": "You need to sign in or your session has expired",
+      "AUTH_403_001": "You do not have permission or cannot remove yourself or an owner",
+      "WORKSPACE_404_001": "This workspace does not exist",
+      "WORKSPACE_MEMBER_404_001": "The target member does not exist",
+      "INTERNAL_500_001": "A server error occurred. Please try again later"
+    },
     "confirmRemove": "Remove",
     "roles": {
       "OWNER": "Owner",
